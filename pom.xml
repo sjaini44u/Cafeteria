@@ -7,7 +7,19 @@
     <groupId>Cafeteria</groupId>
     <artifactId>Cafeteria</artifactId>
     <version>1.0-SNAPSHOT</version>
-<dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <dependencies>
     <dependency>
         <groupId>com.fasterxml.jackson.core</groupId>
         <artifactId>jackson-core</artifactId>
@@ -23,5 +35,17 @@
         <artifactId>jetty-server</artifactId>
         <version>9.4.5.v20170502</version>
     </dependency>
+    <dependency>
+        <groupId>org.eclipse.jetty</groupId>
+        <artifactId>jetty-servlet</artifactId>
+        <version>9.4.6.v20170531</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.eclipse.jetty.websocket/websocket-servlet -->
+    <dependency>
+        <groupId>org.eclipse.jetty.websocket</groupId>
+        <artifactId>websocket-servlet</artifactId>
+        <version>9.4.4.v20170414</version>
+    </dependency>
+
 </dependencies>
 </project>
