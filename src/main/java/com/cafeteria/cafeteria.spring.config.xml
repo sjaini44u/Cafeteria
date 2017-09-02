@@ -5,6 +5,8 @@
     <beans profile="dev">
         <bean id="webSocketCreator" class="com.cafeteria.server.CafeWebSocketCreator"/>
 
+        <bean id="requestController" class="com.cafeteria.controller.RequestController" />
+
         <bean id="cafeServlet" class="com.cafeteria.server.CafeServlet">
             <constructor-arg ref="webSocketCreator"/>
         </bean>

@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Order {
-
     private final String orderId;
     private final String foodItemId;
     private final String customerId;
@@ -37,6 +36,4 @@ public class Order {
         this.customerId = customerId;
         this.quantity = quantity;
     }
-
-
 }
