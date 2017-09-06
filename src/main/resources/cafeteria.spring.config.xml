@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans" xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <beans profile="dev">
+        <context:annotation-config />
+        <context:component-scan base-package="com" />
+        <bean id="requestController" class="com.cafeteria.controller.RequestController" />
+
+        <bean id="cafeWebSocketCreator" class="com.cafeteria.server.CafeWebSocketCreator" >
+            <constructor-arg ref="requestController"></constructor-arg>
+                </bean>
+
+
+        <bean id="cafeServlet" class="com.cafeteria.server.CafeServlet">
+            <constructor-arg ref="cafeWebSocketCreator"/>
+        </bean>
+        <bean class="com.cafeteria.server.CafeJettyServer" id="server">
+            <constructor-arg ref="cafeServlet"/>
+        </bean>
+    </beans>
+</beans>
